@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ darkMode: false }" :class="darkMode ? 'dark' : ''">
+<head>
+    <meta charset="UTF-8">
+    <title>Alps Group | Pearl of Africa Builders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        .dark { background-color: #1a1a1a; color: #f5f5f5; }
+        .uganda-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80'); }
+        .wa-chat { background: #e5ddd5; border-radius: 15px; padding: 10px; position: relative; max-width: 80%; }
+        .wa-chat::after { content: ''; position: absolute; left: -10px; top: 10px; border: 10px solid transparent; border-right-color: #e5ddd5; }
+    </style>
+</head>
+<body class="transition-colors duration-300">
+    <div class="fixed top-20 right-4 z-[100] flex flex-col gap-2">
+        <button @click="darkMode = !darkMode" class="p-3 bg-amber-600 text-white rounded-full shadow-xl">
+            <i :class="darkMode ? 'fas fa-sun' : 'fas fa-moon'"></i>
+        </button>
+    </div>
+
+    <section class="h-screen uganda-gradient bg-cover bg-center flex items-center px-10">
+        <div class="max-w-4xl">
+            <span class="text-amber-500 font-black tracking-widest uppercase">Building Uganda Since 2015</span>
+            <h1 class="text-7xl font-bold text-white mb-6">Quality that survives the Tropical Sun.</h1>
+            <p class="text-gray-300 text-xl mb-10">From the hills of Kapchorwa to the streets of Kampala, Alps Group Ltd provides the hardware for a rising nation.</p>
+            <div class="flex gap-4">
+                <a href="shop.html" class="bg-amber-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:scale-105 transition">START SHOPPING</a>
+                <button class="border-2 border-white text-white px-10 py-4 rounded-xl font-bold">OUR PROJECTS</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-emerald-50 dark:bg-stone-900 px-6">
+        <h2 class="text-center text-3xl font-bold mb-16">Customer Vibes (Direct from WhatsApp)</h2>
+        <div class="container mx-auto grid md:grid-cols-2 gap-10">
+            <div class="flex items-start gap-3">
+                <div class="w-12 h-12 bg-gray-400 rounded-full flex-shrink-0"></div>
+                <div class="wa-chat shadow-sm">
+                    <p class="text-xs font-bold text-emerald-700">Eng. Solomon - Entebbe</p>
+                    <p class="text-sm text-gray-800">Bwana, the 200 bags of cement reached site at 8 AM as promised. You guys are the only reliable people in Kampala! 🤝🤝</p>
+                    <span class="text-[10px] text-gray-500 float-right mt-1">10:42 AM ✓✓</span>
+                </div>
+            </div>
+            <div class="flex items-start gap-3 justify-end">
+                <div class="wa-chat shadow-sm !bg-emerald-100 !after:border-emerald-100 !after:left-auto !after:-right-[10px] !after:border-l-emerald-100 !after:border-r-transparent">
+                    <p class="text-xs font-bold text-emerald-700">Madam Prossy</p>
+                    <p class="text-sm text-gray-800">The lake sand is very clean. No stones inside. I'm recommending you to my neighbor. 🙏</p>
+                    <span class="text-[10px] text-gray-500 float-right mt-1">Yesterday ✓✓</span>
+                </div>
+                <div class="w-12 h-12 bg-amber-500 rounded-full flex-shrink-0"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t text-center dark:border-stone-800">
+        <p class="text-gray-500 font-bold italic">ALPS GROUP LIMITED - UGANDA</p>
+        <p class="mt-4 text-xs">Architected by <span class="text-amber-600 font-black">Mugisha Roy</span></p>
+        <p class="text-[10px] text-gray-400">Founder, Apex Ventures Uganda</p>
+    </footer>
+</body>
+</html>

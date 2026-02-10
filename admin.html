@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alps Admin | Inventory System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex">
+    <aside class="w-64 bg-stone-900 text-white p-6 hidden lg:block">
+        <h1 class="text-xl font-bold border-b border-stone-700 pb-4 mb-6">ALPS ADMIN</h1>
+        <nav class="space-y-4">
+            <div class="text-amber-500 font-bold"><i class="fas fa-box mr-2"></i> Inventory</div>
+            <div class="text-gray-400 hover:text-white cursor-pointer"><i class="fas fa-chart-line mr-2"></i> Sales Stats</div>
+        </nav>
+    </aside>
+
+    <main class="flex-1 p-8">
+        <header class="flex justify-between items-center mb-10">
+            <h2 class="text-3xl font-bold text-stone-800">Product Management</h2>
+            <div id="userProfile" class="flex items-center gap-3">
+                <span class="text-sm font-medium">Alps Logistics Manager</span>
+                <div class="w-10 h-10 bg-amber-600 rounded-full"></div>
+            </div>
+        </header>
+
+        <div class="bg-white rounded-3xl shadow-xl p-8 mb-10 border border-stone-200">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="md:col-span-2 space-y-4">
+                    <input id="prodName" type="text" placeholder="Product Name (e.g., Hima Cement)" class="w-full p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-amber-600">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input id="prodPrice" type="number" placeholder="Price (UGX)" class="p-4 bg-gray-50 rounded-xl outline-none">
+                        <select id="prodCat" class="p-4 bg-gray-50 rounded-xl outline-none">
+                            <option value="Cement">Cement</option>
+                            <option value="Sand/Aggregates">Sand/Aggregates</option>
+                            <option value="Bricks/Blocks">Bricks/Blocks</option>
+                            <option value="Steel/Timber">Steel/Timber</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="border-2 border-dashed border-stone-300 rounded-3xl flex flex-col items-center justify-center p-4 hover:bg-stone-50 transition cursor-pointer relative">
+                    <i class="fas fa-cloud-upload-alt text-3xl text-stone-400 mb-2"></i>
+                    <span class="text-xs font-bold text-stone-500">UPLOAD IMAGE</span>
+                    <input type="file" id="prodImg" class="absolute inset-0 opacity-0 cursor-pointer">
+                </div>
+            </div>
+            <button onclick="saveProduct()" class="mt-6 w-full bg-stone-900 text-white py-4 rounded-xl font-bold hover:bg-amber-800 transition">PUSH TO LIVE SHOP</button>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-lg overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-stone-100 text-stone-600 uppercase text-xs font-black">
+                    <tr>
+                        <th class="p-5">Product</th>
+                        <th class="p-5">Category</th>
+                        <th class="p-5">Price</th>
+                        <th class="p-5 text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="inventoryBody">
+                    </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+        
+        // YOUR FIREBASE CONFIG HERE
+        const firebaseConfig = { apiKey: "...", ... };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Fetch & Display with Delete
+        onSnapshot(collection(db, "products"), (snap) => {
+            const table = document.getElementById('inventoryBody');
+            table.innerHTML = '';
+            snap.forEach(d => {
+                const p = d.data();
+                table.innerHTML += `
+                    <tr class="border-t hover:bg-gray-50">
+                        <td class="p-5 font-bold">${p.name}</td>
+                        <td class="p-5"><span class="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-xs">${p.category}</span></td>
+                        <td class="p-5 font-mono text-stone-600">UGX ${p.price.toLocaleString()}</td>
+                        <td class="p-5 text-right">
+                            <button onclick="deleteProduct('${d.id}')" class="text-red-500 hover:text-red-700 px-3"><i class="fas fa-trash"></i></button>
+                        </td>
+                    </tr>`;
+            });
+        });
+
+        window.deleteProduct = async (id) => {
+            if(confirm("Remove this item?")) await deleteDoc(doc(db, "products", id));
+        };
+
+        // Simplified Save (For real image storage, you'd use getStorage and uploadBytes)
+        window.saveProduct = async () => {
+            const name = document.getElementById('prodName').value;
+            const price = document.getElementById('prodPrice').value;
+            const category = document.getElementById('prodCat').value;
+            // Note: In production, upload file to Storage first then save URL here
+            await addDoc(collection(db, "products"), { name, price: Number(price), category, image: "https://via.placeholder.com/300" });
+            alert("Product Live!");
+        };
+    </script>
+</body>
+</html>
