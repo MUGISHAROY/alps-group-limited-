@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alps Admin | Secure Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        [x-cloak] { display: none !important; }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+    <div id="adminLock" class="fixed inset-0 z-[100] bg-stone-900 flex items-center justify-center p-6">
+        <div class="bg-white p-10 rounded-[3rem] shadow-2xl w-full max-w-md text-center border border-stone-100">
+            <div class="w-20 h-20 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-inner">
+                <i class="fas fa-shield-halved"></i>
+            </div>
+            <h2 class="text-2xl font-black text-stone-800 mb-2 uppercase tracking-tight">Alps Secure Portal</h2>
+            <p class="text-stone-500 text-sm mb-8 font-medium">Please enter your private access key.</p>
+            
+            <input type="password" id="gateKey" placeholder="••••••••" 
+                   class="w-full p-5 bg-stone-50 rounded-2xl mb-4 text-center text-2xl tracking-[0.5em] outline-none focus:ring-2 focus:ring-amber-500 transition-all border border-stone-200">
+            
+            <button onclick="unlockAdmin()" class="w-full bg-stone-900 text-white py-5 rounded-2xl font-black hover:bg-amber-600 transition-all shadow-lg active:scale-95 uppercase tracking-widest">
+                Authorize Access
+            </button>
+        </div>
+    </div>
+
+    <div id="dashboardContent" class="hidden flex flex-col lg:flex-row min-h-screen">
+        
+        <aside class="w-full lg:w-72 bg-stone-900 text-white p-8">
+            <div class="mb-12 text-center lg:text-left">
+                <h1 class="text-2xl font-black tracking-tighter">ALPS GROUP <span class="text-amber-500">LTD</span></h1>
+                <p class="text-[10px] text-stone-500 uppercase tracking-[0.2em] mt-1">Management Console</p>
+            </div>
+            <nav class="space-y-4">
+                <div class="bg-amber-600/10 text-amber-500 font-bold p-4 rounded-2xl flex items-center gap-3 border border-amber-600/20">
+                    <i class="fas fa-boxes-stacked"></i> Live Inventory
+                </div>
+            </nav>
+            <div class="mt-auto pt-20 hidden lg:block">
+                <p class="text-[9px] text-stone-600 uppercase font-black leading-relaxed">
+                    Designed for Alps Group Ltd<br>By Mugisha Roy • Apex Ventures
+                </p>
+            </div>
+        </aside>
+
+        <main class="flex-1 p-6 lg:p-12">
+            <header class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-4xl font-black text-stone-800 tracking-tight">Material Sync</h2>
+                    <p class="text-stone-500 font-medium">Add materials to the live shop using free image links.</p>
+                </div>
+                <div class="bg-white px-5 py-3 rounded-2xl shadow-sm border border-stone-200 flex items-center gap-3">
+                    <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                    <span class="text-[10px] font-black text-stone-400 uppercase tracking-widest">System Online</span>
+                </div>
+            </header>
+
+            <section class="glass-panel rounded-[2.5rem] shadow-xl p-8 mb-12 border border-white">
+                <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2 ml-2">Material Name</label>
+                            <input id="prodName" type="text" placeholder="e.g. Tororo Cement (50kg)" class="w-full p-5 bg-white rounded-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-stone-100 shadow-inner">
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2 ml-2">Price (UGX)</label>
+                                <input id="prodPrice" type="number" placeholder="32000" class="w-full p-5 bg-white rounded-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-stone-100 shadow-inner">
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2 ml-2">Category</label>
+                                <select id="prodCat" class="w-full p-5 bg-white rounded-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-stone-100 shadow-inner font-bold text-stone-700">
+                                    <option value="Cement">Cement</option>
+                                    <option value="Sand/Aggregates">Sand/Aggregates</option>
+                                    <option value="Bricks/Blocks">Bricks/Blocks</option>
+                                    <option value="Steel/Timber">Steel/Timber</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-[10px] font-black text-stone-400 uppercase tracking-widest mb-2 ml-2 text-amber-600">Free Image URL Link</label>
+                            <textarea id="prodImgUrl" placeholder="Paste Direct Link from ImgBB or WhatsApp..." class="w-full h-[155px] p-5 bg-white rounded-2xl outline-none focus:ring-2 focus:ring-amber-500 border border-stone-100 shadow-inner resize-none"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="saveProduct()" id="submitBtn" class="mt-8 w-full bg-stone-900 text-white py-6 rounded-2xl font-black text-xl hover:bg-amber-600 transition-all shadow-xl flex items-center justify-center gap-3 group">
+                    <i class="fas fa-cloud-arrow-up group-hover:-translate-y-1 transition-transform"></i> PUSH TO LIVE SHOP
+                </button>
+            </section>
+
+            <div class="bg-white rounded-[2.5rem] shadow-lg overflow-hidden border border-stone-100">
+                <table class="w-full text-left">
+                    <thead class="bg-stone-50 border-b border-stone-100">
+                        <tr>
+                            <th class="p-6 text-[10px] font-black text-stone-400 uppercase tracking-widest">Material</th>
+                            <th class="p-6 text-[10px] font-black text-stone-400 uppercase tracking-widest">Category</th>
+                            <th class="p-6 text-[10px] font-black text-stone-400 uppercase tracking-widest">Price</th>
+                            <th class="p-6 text-right text-[10px] font-black text-stone-400 uppercase tracking-widest">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryBody" class="divide-y divide-stone-50"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUm3H66Hw2bmpO8PmSHWLAOM0o5shw_oM",
+            authDomain: "alps-group-limited.firebaseapp.com",
+            projectId: "alps-group-limited",
+            storageBucket: "alps-group-limited.firebasestorage.app",
+            messagingSenderId: "416661528150",
+            appId: "1:416661528150:web:1ffbdab87267c37b9165f7",
+            measurementId: "G-D52H04VL5Q"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // LOCK LOGIC
+        window.unlockAdmin = () => {
+            const key = document.getElementById('gateKey').value;
+            if (key === 'ALPS2026') { // YOUR PASSWORD
+                document.getElementById('adminLock').classList.add('hidden');
+                document.getElementById('dashboardContent').classList.remove('hidden');
+            } else {
+                alert('Access Denied: Incorrect Password');
+            }
+        };
+
+        // INVENTORY SYNC
+        const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+        onSnapshot(q, (snap) => {
+            const table = document.getElementById('inventoryBody');
+            table.innerHTML = '';
+            snap.forEach(d => {
+                const p = d.data();
+                table.innerHTML += `
+                    <tr class="hover:bg-amber-50/20 transition-colors">
+                        <td class="p-6">
+                            <div class="flex items-center gap-4">
+                                <img src="${p.image}" class="w-12 h-12 rounded-xl object-cover shadow-sm bg-stone-100" onerror="this.src='https://via.placeholder.com/50'">
+                                <span class="font-black text-stone-800 uppercase tracking-tight text-sm">${p.name}</span>
+                            </div>
+                        </td>
+                        <td class="p-6"><span class="bg-stone-100 text-stone-500 px-3 py-1 rounded-full text-[10px] font-black uppercase">${p.category}</span></td>
+                        <td class="p-6 font-mono font-bold text-amber-700">UGX ${Number(p.price).toLocaleString()}</td>
+                        <td class="p-6 text-right">
+                            <button onclick="deleteProduct('${d.id}')" class="w-10 h-10 text-stone-300 hover:text-red-500 transition-all text-sm"><i class="fas fa-trash-alt"></i></button>
+                        </td>
+                    </tr>`;
+            });
+        });
+
+        window.deleteProduct = async (id) => {
+            if(confirm("Confirm removal from Live Shop?")) await deleteDoc(doc(db, "products", id));
+        };
+
+        window.saveProduct = async () => {
+            const btn = document.getElementById('submitBtn');
+            const name = document.getElementById('prodName').value;
+            const price = document.getElementById('prodPrice').value;
+            const category = document.getElementById('prodCat').value;
+            const imageUrl = document.getElementById('prodImgUrl').value;
+
+            if(!name || !price || !imageUrl) return alert("All fields are required!");
+
+            btn.disabled = true;
+            btn.innerHTML = `<i class="fas fa-circle-notch animate-spin"></i> SYNCING TO CLOUD...`;
+
+            try {
+                await addDoc(collection(db, "products"), {
+                    name, price: Number(price), category, image: imageUrl,
+                    adminKey: "ALPS_SECRET_2026",
+                    createdAt: serverTimestamp()
+                });
+                alert("Inventory Updated!");
+                document.getElementById('prodName').value = '';
+                document.getElementById('prodPrice').value = '';
+                document.getElementById('prodImgUrl').value = '';
+            } catch (e) {
+                alert("Error: " + e.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = `<i class="fas fa-cloud-arrow-up"></i> PUSH TO LIVE SHOP`;
+            }
+        };
+    </script>
+</body>
+</html>
