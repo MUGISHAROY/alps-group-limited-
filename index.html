@@ -3,149 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alps Group Limited | Construction & Engineering Uganda</title>
+    <title>Alps Group Limited | Construction & Logistics Uganda</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3, .brand { font-family: 'Archivo Black', sans-serif; }
+        .industrial-grid { background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+        .amber-gradient { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); }
     </style>
 </head>
-<body class="bg-white text-slate-900">
+<body class="bg-white text-stone-900">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+    <nav class="fixed w-full z-50 bg-stone-900/95 backdrop-blur-md text-white border-b border-stone-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex flex-col">
-                <span class="text-2xl font-black tracking-tighter text-slate-900 leading-none">ALPS GROUP <span class="text-amber-600">LTD</span></span>
-                <span class="text-[9px] uppercase font-bold tracking-[0.3em] text-slate-400 mt-1">Engineering Excellence</span>
+                <span class="text-2xl tracking-tighter brand">ALPS GROUP <span class="text-amber-500">LTD</span></span>
+                <span class="text-[9px] uppercase tracking-[0.4em] text-stone-500 font-bold">Engineering & Supplies</span>
             </div>
-            <div class="hidden md:flex gap-8 items-center font-bold text-sm uppercase tracking-widest text-slate-600">
-                <a href="#services" class="hover:text-amber-600 transition">Services</a>
-                <a href="#materials" class="hover:text-amber-600 transition">Materials</a>
-                <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
-                <a href="https://wa.me/256775065744" class="bg-amber-600 text-white px-6 py-3 rounded-full hover:bg-slate-900 transition shadow-lg shadow-amber-600/20">Get a Quote</a>
+            <div class="hidden md:flex gap-8 items-center text-[11px] font-black uppercase tracking-widest">
+                <a href="#services" class="hover:text-amber-500 transition">Construction</a>
+                <a href="#shop" class="hover:text-amber-500 transition">Material Sales</a>
+                <a href="https://wa.me/256775065744" class="amber-gradient px-6 py-3 rounded-sm text-stone-900 shadow-xl">Call Management</a>
             </div>
+            <button onclick="toggleAdmin()" class="text-stone-600 hover:text-white transition ml-4"><i class="fas fa-lock"></i></button>
         </div>
     </nav>
 
-    <section class="hero-gradient min-h-screen flex items-center text-white px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h1 class="text-6xl md:text-8xl font-black tracking-tighter leading-tight mb-8">Building the Future of <span class="text-amber-500">Uganda.</span></h1>
-            <p class="text-xl md:text-2xl text-slate-300 mb-12 font-medium">Professional structural engineering, civil construction, and premium material supply from Mpala to Entebbe.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="#services" class="bg-white text-slate-900 px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:scale-105 transition-transform">Our Services</a>
-                <a href="mailto:alpsgroup2005@gmail.com" class="glass px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-white/10 transition">Email Inquiry</a>
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-stone-900">
+        <div class="absolute inset-0 opacity-40">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" class="w-full h-full object-cover">
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+            <div class="max-w-3xl">
+                <span class="bg-amber-500 text-stone-900 px-4 py-1 text-[10px] font-black uppercase tracking-[0.3em] mb-6 inline-block">Established 2005</span>
+                <h1 class="text-6xl md:text-8xl text-white leading-none mb-8 tracking-tighter">WE BUILD <br><span class="text-amber-500">UGANDA.</span></h1>
+                <p class="text-xl text-stone-300 mb-10 font-medium leading-relaxed border-l-4 border-amber-500 pl-6">
+                    Professional Structural Engineering, Civil Construction, and Premium Material Supply. 
+                    Operating from <strong>Mpala</strong> and <strong>Entebbe</strong>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#shop" class="amber-gradient px-10 py-5 text-stone-900 font-black uppercase tracking-widest text-sm shadow-2xl hover:scale-105 transition">Order Materials</a>
+                    <a href="mailto:alpsgroup2005@gmail.com" class="bg-white/10 backdrop-blur border border-white/20 text-white px-10 py-5 font-black uppercase tracking-widest text-sm hover:bg-white/20 transition">Contact Company</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-24 px-6 bg-slate-50">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12">
-            <div class="bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50">
-                <h3 class="text-sm font-black text-amber-600 uppercase tracking-widest mb-4">Managing Director</h3>
-                <p class="text-2xl font-black text-slate-900 mb-2 uppercase">Shafik Lutaaya</p>
-                <p class="text-slate-500 leading-relaxed font-medium">Leading Alps Group with a focus on structural integrity and client satisfaction.</p>
-            </div>
-            <div class="bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50">
-                <h3 class="text-sm font-black text-amber-600 uppercase tracking-widest mb-4">Mpala Branch</h3>
-                <p class="text-xl font-black text-slate-900 mb-2 uppercase">Headquarters</p>
-                <p class="text-slate-500 font-medium italic">Entebbe Road, Mpala</p>
-            </div>
-            <div class="bg-white p-10 rounded-[3rem] shadow-xl shadow-slate-200/50">
-                <h3 class="text-sm font-black text-amber-600 uppercase tracking-widest mb-4">Entebbe Branch</h3>
-                <p class="text-xl font-black text-slate-900 mb-2 uppercase">Operations Hub</p>
-                <p class="text-slate-500 font-medium italic">Entebbe Town Center</p>
-            </div>
+    <section class="bg-amber-500 py-6 overflow-hidden">
+        <div class="flex whitespace-nowrap animate-pulse">
+            <p class="text-stone-900 font-black uppercase tracking-[0.5em] text-xs mx-10">MPALA BRANCH ACTIVE • ENTEBBE BRANCH ACTIVE • SINO TRUCK LOGISTICS • STRUCTURAL AUDITS • MPALA BRANCH ACTIVE</p>
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6">
+    <section id="services" class="py-24 px-6 industrial-grid">
         <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-4">Expert Construction</h2>
-                <div class="h-2 w-24 bg-amber-500"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="group cursor-default">
-                    <div class="bg-slate-900 text-white p-12 rounded-[4rem] group-hover:bg-amber-600 transition-colors duration-500">
-                        <i class="fas fa-building text-5xl mb-8"></i>
-                        <h4 class="text-3xl font-black mb-6 uppercase">Civil Engineering</h4>
-                        <p class="text-slate-400 group-hover:text-white leading-relaxed mb-8">From foundation to finishing, we handle residential and commercial projects with technical precision.</p>
-                        <ul class="space-y-3 font-bold text-sm uppercase tracking-wide opacity-70">
-                            <li><i class="fas fa-check mr-2"></i> Structural Audits</li>
-                            <li><i class="fas fa-check mr-2"></i> Site Preparation</li>
-                            <li><i class="fas fa-check mr-2"></i> Project Management</li>
-                        </ul>
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl md:text-6xl mb-8 tracking-tighter uppercase">Our Core <br><span class="text-stone-400">Expertise</span></h2>
+                    <p class="text-stone-500 text-lg font-medium mb-12">Under the leadership of <span class="text-stone-900 font-bold">Shafik Lutaaya</span>, Alps Group Ltd delivers technical mastery in civil works across Central Uganda.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="w-16 h-16 bg-stone-900 text-amber-500 flex items-center justify-center text-2xl shrink-0 shadow-lg"><i class="fas fa-hard-hat"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Structural Engineering</h4>
+                                <p class="text-stone-500 text-sm">Comprehensive site engineering, audits, and project management for high-rise and residential builds.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="w-16 h-16 bg-stone-900 text-amber-500 flex items-center justify-center text-2xl shrink-0 shadow-lg"><i class="fas fa-truck-ramp-box"></i></div>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Heavy Logistics</h4>
+                                <p class="text-stone-500 text-sm">Fleet-managed delivery of Sand, Aggregates, and Hardcore directly to your site via Sino Trucks.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="group cursor-default">
-                    <div class="bg-slate-100 p-12 rounded-[4rem] border border-slate-200 group-hover:border-amber-500 transition-all duration-500">
-                        <i class="fas fa-truck-fast text-5xl text-amber-600 mb-8"></i>
-                        <h4 class="text-3xl font-black mb-6 uppercase">Site Logistics</h4>
-                        <p class="text-slate-500 leading-relaxed mb-8">Specialized delivery of bulk construction materials directly to your site across the Central Region.</p>
-                        <ul class="space-y-3 font-bold text-sm uppercase tracking-wide text-slate-400">
-                            <li><i class="fas fa-check mr-2"></i> Sino Truck Deliveries</li>
-                            <li><i class="fas fa-check mr-2"></i> Sand & Aggregates</li>
-                            <li><i class="fas fa-check mr-2"></i> Bulk Cement Supply</li>
-                        </ul>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070" class="rounded-sm shadow-2xl">
+                    <div class="absolute -bottom-10 -left-10 bg-white p-10 shadow-2xl border-t-8 border-amber-500 hidden md:block">
+                        <p class="text-4xl font-black mb-1 italic">20+</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-stone-400">Years of Experience</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="materials" class="py-24 px-6 bg-slate-900 text-white rounded-[4rem] mx-6">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl md:text-5xl font-black tracking-tighter uppercase mb-12">Building Materials</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition">
-                    <p class="text-amber-500 font-black text-3xl mb-2">31k</p>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-50">Hima Cement</p>
+    <section id="shop" class="py-24 px-6 bg-stone-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl uppercase tracking-tighter">Material <span class="text-amber-600">Supply</span></h2>
+                    <p class="text-stone-400 font-bold text-xs uppercase tracking-widest mt-2">Daily Market Rates for Kampala & Entebbe</p>
                 </div>
-                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition">
-                    <p class="text-amber-500 font-black text-3xl mb-2">39k</p>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-50">T12 Rebars</p>
-                </div>
-                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition">
-                    <p class="text-amber-500 font-black text-3xl mb-2">2.1M</p>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-50">Lake Sand (Sino)</p>
-                </div>
-                <div class="p-8 border border-white/10 rounded-3xl hover:bg-white/5 transition">
-                    <p class="text-amber-500 font-black text-3xl mb-2">1.9k</p>
-                    <p class="text-xs font-bold uppercase tracking-widest opacity-50">6" Blocks</p>
-                </div>
+                <div class="hidden md:block bg-stone-900 text-white text-[10px] font-black px-4 py-2 uppercase tracking-widest">Branch Pick-up Available</div>
             </div>
-            <p class="mt-12 text-slate-400 font-medium italic">Prices current as of February 2026. Contact us for bulk orders.</p>
+
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+                </div>
         </div>
     </section>
 
-    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 class="text-5xl font-black tracking-tighter uppercase mb-16 leading-tight">Get in Touch with<br><span class="text-amber-600 underline decoration-8 underline-offset-8">The Experts.</span></h2>
-        
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="flex flex-col items-center gap-6 p-12 bg-slate-50 rounded-[3rem]">
-                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center text-3xl shadow-inner">
-                    <i class="fab fa-whatsapp"></i>
+    <footer class="bg-stone-900 text-white py-24 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 border-b border-stone-800 pb-20 mb-10">
+            <div>
+                <h2 class="text-5xl mb-8 tracking-tighter uppercase">Work with <br><span class="text-amber-500">Shafik Lutaaya</span></h2>
+                <p class="text-stone-400 mb-10 max-w-md">Whether you are building a home in Entebbe or a commercial hub in Mpala, we provide the technical foundation you need.</p>
+                <div class="space-y-4">
+                    <a href="https://wa.me/256775065744" class="flex items-center gap-4 text-2xl font-bold hover:text-amber-500 transition"><i class="fab fa-whatsapp text-amber-500"></i> +256 775 065 744</a>
+                    <a href="mailto:alpsgroup2005@gmail.com" class="flex items-center gap-4 text-xl font-bold hover:text-amber-500 transition text-stone-300"><i class="fas fa-envelope text-amber-500"></i> alpsgroup2005@gmail.com</a>
                 </div>
-                <h4 class="text-xl font-black uppercase tracking-tight">Direct WhatsApp</h4>
-                <a href="https://wa.me/256775065744" class="text-2xl font-bold text-slate-900 hover:text-amber-600 transition">+256 775 065 744</a>
             </div>
-            <div class="flex flex-col items-center gap-6 p-12 bg-slate-50 rounded-[3rem]">
-                <div class="w-16 h-16 bg-amber-100 text-amber-600 rounded-full flex items-center justify-center text-3xl shadow-inner">
-                    <i class="fas fa-envelope"></i>
+            <div class="grid grid-cols-2 gap-8">
+                <div>
+                    <h4 class="text-amber-500 font-black uppercase text-[10px] tracking-widest mb-4">Mpala Branch</h4>
+                    <p class="text-sm text-stone-500">Main Headquarters<br>Entebbe Road, Mpala<br>Kampala, Uganda</p>
                 </div>
-                <h4 class="text-xl font-black uppercase tracking-tight">Official Email</h4>
-                <a href="mailto:alpsgroup2005@gmail.com" class="text-lg font-bold text-slate-900 hover:text-amber-600 transition">alpsgroup2005@gmail.com</a>
+                <div>
+                    <h4 class="text-amber-500 font-black uppercase text-[10px] tracking-widest mb-4">Entebbe Branch</h4>
+                    <p class="text-sm text-stone-500">Operations Hub<br>Town Center Area<br>Entebbe, Uganda</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <footer class="py-12 px-6 border-t border-slate-100 text-center">
-        <p class="text-xs font-black uppercase tracking-[0.4em] text-slate-400 mb-2">Alps Group Limited © 2026</p>
-        <p class="text-[10px] text-slate-300 font-bold uppercase">Crafted by Mugisha Roy</p>
+        <div class="text-center text-[10px] font-black uppercase tracking-[0.5em] text-stone-700">
+            Alps Group Ltd © 2026 • Developed by Mugisha Roy
+        </div>
     </footer>
 
+    <div id="adminModal" class="fixed inset-0 z-[100] bg-stone-900/98 flex items-center justify-center p-6 hidden">
+        <div class="bg-white w-full max-w-lg p-10 shadow-2xl border-t-8 border-amber-500">
+            <div class="flex justify-between items-center mb-10">
+                <h3 class="text-2xl font-black uppercase italic">Inventory Push</h3>
+                <button onclick="toggleAdmin()" class="text-stone-300 hover:text-red-500"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="space-y-4">
+                <input id="prodName" type="text" placeholder="Material Name" class="w-full p-4 bg-stone-50 border border-stone-100 outline-none">
+                <input id="prodPrice" type="number" placeholder="Price (UGX)" class="w-full p-4 bg-stone-50 border border-stone-100">
+                <select id="prodCat" class="w-full p-4 bg-stone-50 border border-stone-100 font-bold uppercase text-xs tracking-widest">
+                    <option value="Cement">Cement</option>
+                    <option value="Sand/Aggregates">Sand/Aggregates</option>
+                    <option value="Steel/Timber">Steel/Timber</option>
+                </select>
+                <input id="prodImgUrl" type="text" placeholder="Image URL (.jpg / .png)" class="w-full p-4 bg-stone-50 border border-stone-100">
+                <button onclick="saveProduct()" id="syncBtn" class="w-full bg-stone-900 text-white py-5 font-black uppercase tracking-widest shadow-xl hover:bg-amber-600 transition">Update Live Shop</button>
+                <div id="adminList" class="pt-8 space-y-2 border-t mt-8 overflow-y-auto max-h-40"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, onSnapshot, deleteDoc, doc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBUm3H66Hw2bmpO8PmSHWLAOM0o5shw_oM",
+            authDomain: "alps-group-limited.firebaseapp.com",
+            projectId: "alps-group-limited",
+            storageBucket: "alps-group-limited.firebasestorage.app",
+            messagingSenderId: "416661528150",
+            appId: "1:416661528150:web:1ffbdab87267c37b9165f7"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        window.toggleAdmin = () => {
+            const modal = document.getElementById('adminModal');
+            if(modal.classList.contains('hidden')) {
+                const pass = prompt("Enter Admin Key:");
+                if(pass === "ALPS2026") modal.classList.remove('hidden');
+            } else { modal.classList.add('hidden'); }
+        };
+
+        const q = query(collection(db, "products"), orderBy("createdAt", "desc"));
+        onSnapshot(q, (snap) => {
+            const grid = document.getElementById('productGrid');
+            const list = document.getElementById('adminList');
+            grid.innerHTML = ''; list.innerHTML = '';
+            snap.forEach(d => {
+                const p = d.data();
+                grid.innerHTML += `
+                    <div class="bg-white p-8 shadow-xl border-b-4 border-stone-100 hover:border-amber-500 transition-all group">
+                        <div class="h-48 bg-stone-100 mb-6 overflow-hidden">
+                            <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                        </div>
+                        <h4 class="text-xl font-black uppercase tracking-tighter mb-4">${p.name}</h4>
+                        <div class="flex items-center justify-between">
+                            <p class="text-xl font-mono font-bold text-amber-600">UGX ${Number(p.price).toLocaleString()}</p>
+                            <a href="https://wa.me/256775065744?text=Order:${p.name}" class="bg-stone-900 text-white px-4 py-2 text-[10px] font-black uppercase tracking-widest hover:bg-amber-600 transition">Order</a>
+                        </div>
+                    </div>`;
+                list.innerHTML += `<div class="flex justify-between text-xs font-bold bg-stone-50 p-3"><span>${p.name}</span><button onclick="deleteProduct('${d.id}')" class="text-red-500">DEL</button></div>`;
+            });
+        });
+
+        window.saveProduct = async () => {
+            const name = document.getElementById('prodName').value;
+            const price = document.getElementById('prodPrice').value;
+            const category = document.getElementById('prodCat').value;
+            const imageUrl = document.getElementById('prodImgUrl').value;
+            if(!name || !price || !imageUrl) return alert("Fill everything");
+            try {
+                await addDoc(collection(db, "products"), { name, price: Number(price), category, image: imageUrl, adminKey: "ALPS_SECRET_2026", createdAt: serverTimestamp() });
+                alert("Shop Updated!");
+                document.getElementById('prodName').value = ''; document.getElementById('prodPrice').value = ''; document.getElementById('prodImgUrl').value = '';
+            } catch (e) { alert(e.message); }
+        };
+
+        window.deleteProduct = async (id) => { if(confirm("Remove?")) await deleteDoc(doc(db, "products", id)); };
+    </script>
 </body>
 </html>
