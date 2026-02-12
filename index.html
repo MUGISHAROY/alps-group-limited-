@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alps Group Limited | Engineering & Infrastructure Solutions</title>
+    <title>Alps Group Limited | Engineering & Infrastructure</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -11,216 +11,106 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .hero-overlay { background: linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.8)); }
         .service-card:hover { transform: translateY(-10px); }
+        .project-img { height: 250px; width: 100%; object-fit: cover; border-radius: 1.5rem; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex flex-col">
-                <span class="text-2xl font-black tracking-tighter text-slate-900 leading-none uppercase">Alps Group <span class="text-amber-600">Ltd</span></span>
-                <span class="text-[9px] uppercase font-bold tracking-[0.3em] text-slate-400 mt-1">Established 2005 • Uganda</span>
+                <span class="text-2xl font-black tracking-tighter uppercase">Alps Group <span class="text-amber-600">Ltd</span></span>
+                <span class="text-[9px] uppercase font-bold tracking-[0.3em] text-slate-400">Established 2005 • Uganda</span>
             </div>
-            <div class="hidden lg:flex gap-8 items-center font-bold text-[10px] uppercase tracking-widest text-slate-600">
-                <a href="#overview" class="hover:text-amber-600 transition">Overview</a>
-                <a href="#services" class="hover:text-amber-600 transition">Services</a>
-                <a href="#projects" class="hover:text-amber-600 transition">Experience</a>
-                <a href="#contact" class="bg-slate-900 text-white px-6 py-3 rounded-full hover:bg-amber-600 transition">Contact Us</a>
-            </div>
+            <a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest">Contact</a>
         </div>
     </nav>
 
-    <section class="relative min-h-screen flex items-center pt-20 bg-slate-900 text-white overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-30">
+    <section class="relative min-h-[80vh] flex items-center bg-slate-900 text-white px-6 overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-30">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070" class="w-full h-full object-cover">
         </div>
-        <div class="hero-overlay absolute inset-0 z-10"></div>
-        
-        <div class="relative z-20 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="inline-block bg-amber-500 text-slate-900 px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6">Sustainable Infrastructure</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-8">Building the Future <br>of <span class="text-amber-500 underline decoration-8 underline-offset-8 decoration-amber-500/30">Africa.</span></h1>
-                <p class="text-lg text-slate-300 mb-10 leading-relaxed max-w-xl font-light">Nearly 20 years of delivering high-impact engineering solutions. Partnering with the World Bank and the Government of Uganda on major national developments.</p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-amber-500 transition shadow-2xl">Track Record</a>
-                    <a href="#contact" class="bg-white/10 border border-white/20 px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-white/20 transition backdrop-blur-md">Request Quote</a>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                    <h3 class="text-4xl font-black text-amber-500 mb-2">20+</h3>
-                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Years Experience</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                    <h3 class="text-3xl font-black text-amber-500 mb-2">UGIFT</h3>
-                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">Certified Partner</p>
-                </div>
-                <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                    <h3 class="text-3xl font-black text-amber-500 mb-2">USEEP</h3>
-                    <p class="text-[10px] uppercase font-bold text-slate-400 tracking-widest">World Bank Projects</p>
-                </div>
-                <div class="bg-amber-500 p-8 rounded-3xl text-slate-900">
-                    <i class="fas fa-shield-halved text-4xl"></i>
-                    <p class="text-[10px] uppercase font-bold tracking-widest mt-2">Quality Assured</p>
-                </div>
-            </div>
+        <div class="relative z-10 max-w-7xl mx-auto">
+            <span class="bg-amber-500 text-slate-900 px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-4 inline-block">20 Years Experience</span>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">Building <span class="text-amber-500">Uganda.</span></h1>
+            <p class="max-w-xl text-slate-300 text-lg font-light">Partnering with World Bank (USEEP) and UGIFT to deliver national infrastructure.</p>
         </div>
     </section>
 
-    <section id="overview" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-black uppercase tracking-tighter mb-6">Company Overview</h2>
-                <p class="text-slate-600 leading-relaxed mb-6">Founded in 2005, Alps Group Limited is a professional construction and engineering company committed to delivering sustainable infrastructure solutions across Uganda and beyond.</p>
-                <p class="text-slate-600 leading-relaxed">We have built a strong reputation for quality, reliability, and timely project delivery through nearly two decades of industry leadership.</p>
-            </div>
-            <div class="grid gap-6">
-                <div class="bg-white p-8 rounded-3xl shadow-sm border-l-8 border-amber-500">
-                    <h4 class="text-sm font-black uppercase mb-2">Our Vision</h4>
-                    <p class="text-slate-500 text-sm italic">"To become a leading construction and engineering company in Africa known for quality, reliability, and innovation."</p>
-                </div>
-                <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-xl border-l-8 border-amber-600">
-                    <h4 class="text-sm font-black uppercase mb-2 text-amber-500">Our Mission</h4>
-                    <p class="text-slate-400 text-sm italic">"To deliver safe, high-quality, and cost-effective construction solutions that exceed client expectations."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="py-24 px-6 bg-white">
+    <section id="services" class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-black uppercase tracking-tighter">Engineering Specializations</h2>
-                <div class="h-1.5 w-24 bg-amber-500 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] transition-all duration-300 border border-slate-100">
-                    <i class="fas fa-trowel-bricks text-4xl text-amber-600 mb-6"></i>
-                    <h4 class="font-black uppercase text-sm mb-4">Civil Engineering</h4>
-                    <ul class="text-[11px] text-slate-500 space-y-3 font-medium">
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Structural Construction</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Bridges & Culverts</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Foundation Works</li>
-                    </ul>
+            <h2 class="text-3xl font-black uppercase mb-12 text-center">Our Services</h2>
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <i class="fas fa-pencil-ruler text-amber-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Architectural Designs</p>
                 </div>
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] transition-all duration-300 border border-slate-100">
-                    <i class="fas fa-bolt text-4xl text-amber-600 mb-6"></i>
-                    <h4 class="font-black uppercase text-sm mb-4">Electrical Engineering</h4>
-                    <ul class="text-[11px] text-slate-500 space-y-3 font-medium">
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Industrial Wiring</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Solar/Backup Power</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Power Distribution</li>
-                    </ul>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <i class="fas fa-trowel-bricks text-amber-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Civil Engineering</p>
                 </div>
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] transition-all duration-300 border border-slate-100">
-                    <i class="fas fa-droplet text-4xl text-amber-600 mb-6"></i>
-                    <h4 class="font-black uppercase text-sm mb-4">Water Systems</h4>
-                    <ul class="text-[11px] text-slate-500 space-y-3 font-medium">
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Supply Installations</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Drainage & Sewer</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Pumping Systems</li>
-                    </ul>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <i class="fas fa-bolt text-amber-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Electrical Systems</p>
                 </div>
-                <div class="service-card p-10 bg-slate-50 rounded-[3rem] transition-all duration-300 border border-slate-100">
-                    <i class="fas fa-road text-4xl text-amber-600 mb-6"></i>
-                    <h4 class="font-black uppercase text-sm mb-4">Road Construction</h4>
-                    <ul class="text-[11px] text-slate-500 space-y-3 font-medium">
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Design & Rehab</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Asphalt & Murram</li>
-                        <li><i class="fas fa-check text-amber-500 mr-2"></i> Stormwater Drainage</li>
-                    </ul>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <i class="fas fa-droplet text-amber-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Water & Plumbing</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 text-center">
+                    <i class="fas fa-road text-amber-600 mb-4 text-xl"></i>
+                    <p class="text-[10px] font-black uppercase tracking-widest">Road Construction</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6 bg-slate-900 text-white rounded-[4rem] mx-4 lg:mx-8">
+    <section id="projects" class="py-20 px-6 bg-slate-900 text-white rounded-[3rem] mx-4">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black uppercase tracking-tighter mb-16 text-center">Proven Experience</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="group p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-white/10 transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-amber-500 text-slate-900 rounded-2xl flex items-center justify-center font-black">01</div>
-                        <h4 class="text-xl font-bold uppercase">Education Sector</h4>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Major construction of schools under **UGIFT** and **USEEP** World Bank Projects, enhancing learning infrastructure across Uganda.</p>
-                </div>
-                <div class="group p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-white/10 transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-amber-500 text-slate-900 rounded-2xl flex items-center justify-center font-black">02</div>
-                        <h4 class="text-xl font-bold uppercase">Health Sector</h4>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Renovation and new construction of hospital facilities, meeting rigorous healthcare infrastructure standards.</p>
-                </div>
-                <div class="group p-10 bg-white/5 rounded-[3rem] border border-white/10 hover:bg-white/10 transition">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-12 h-12 bg-amber-500 text-slate-900 rounded-2xl flex items-center justify-center font-black">03</div>
-                        <h4 class="text-xl font-bold uppercase">Transport & Private</h4>
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">Successfully delivered bridge works, road infrastructure, and high-end residential/commercial developments.</p>
-                </div>
-                <div class="group p-10 bg-amber-600 rounded-[3rem] flex flex-col justify-center">
-                    <h4 class="text-3xl font-black uppercase leading-none mb-4">Our Clients</h4>
-                    <p class="text-amber-100 text-sm font-bold uppercase tracking-widest leading-loose">
-                        Government of Uganda • World Bank • NGOs • Private Developers • International Institutions
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-20 items-center">
-            <div>
-                <h2 class="text-5xl font-black uppercase tracking-tighter mb-8 leading-tight">Connect with<br><span class="text-amber-600 underline decoration-8 underline-offset-8 decoration-amber-600/20">The Head Office.</span></h2>
+            <h2 class="text-3xl font-black uppercase mb-12 text-center text-amber-500">Construction Activity</h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 
-                <div class="space-y-10 mt-12">
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-slate-900 text-amber-500 rounded-3xl flex items-center justify-center text-xl shadow-xl shadow-slate-200"><i class="fas fa-map-pin"></i></div>
-                        <div>
-                            <p class="font-black uppercase text-[10px] tracking-widest text-slate-400 mb-1">Entebbe Head Office</p>
-                            <p class="text-slate-800 font-bold">Imperial Mall, Entebbe</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-slate-900 text-amber-500 rounded-3xl flex items-center justify-center text-xl shadow-xl shadow-slate-200"><i class="fas fa-building"></i></div>
-                        <div>
-                            <p class="font-black uppercase text-[10px] tracking-widest text-slate-400 mb-1">Mpala Branch Office</p>
-                            <p class="text-slate-800 font-bold">Mpala, near Breadhouse</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-6">
-                        <div class="w-14 h-14 bg-slate-900 text-amber-500 rounded-3xl flex items-center justify-center text-xl shadow-xl shadow-slate-200"><i class="fas fa-phone-volume"></i></div>
-                        <div>
-                            <p class="font-black uppercase text-[10px] tracking-widest text-slate-400 mb-1">Official Support</p>
-                            <p class="text-slate-800 font-bold">+256 772 429 431 / +256 775 065 744</p>
-                        </div>
-                    </div>
+                <div class="space-y-4">
+                    <img src="project1.jpg" alt="Construction Photo 1" class="project-img bg-slate-800">
+                    <h4 class="font-bold uppercase text-sm">Educational Infrastructure</h4>
+                    <p class="text-xs text-slate-400">Ongoing works under World Bank USEEP Projects.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <img src="project2.jpg" alt="Construction Photo 2" class="project-img bg-slate-800">
+                    <h4 class="font-bold uppercase text-sm">Site Civil Engineering</h4>
+                    <p class="text-xs text-slate-400">Reliable structural construction across the region.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <img src="project3.jpg" alt="Construction Photo 3" class="project-img bg-slate-800">
+                    <h4 class="font-bold uppercase text-sm">Road & Transport Works</h4>
+                    <p class="text-xs text-slate-400">Maintaining and rehabilitating national road networks.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-4xl font-black uppercase mb-8">Our <span class="text-amber-600">Offices</span></h2>
+                <div class="space-y-6">
+                    <p class="font-bold text-sm uppercase text-slate-400 tracking-widest">Head Office: <span class="text-slate-900">Imperial Mall, Entebbe</span></p>
+                    <p class="font-bold text-sm uppercase text-slate-400 tracking-widest">Branch Office: <span class="text-slate-900">Mpala, near Breadhouse</span></p>
+                    <p class="font-bold text-sm uppercase text-slate-400 tracking-widest">Phone: <span class="text-slate-900">+256 772 429 431</span></p>
                 </div>
             </div>
-            
-            <div class="bg-white p-12 rounded-[4rem] shadow-2xl shadow-slate-200 border border-slate-100">
-                <h3 class="text-2xl font-black mb-6 uppercase tracking-tight">Corporate Inquiry</h3>
+            <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
                 <form class="space-y-4">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="Contact Person" class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none focus:ring-2 focus:ring-amber-500">
-                        <input type="text" placeholder="Organization" class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none focus:ring-2 focus:ring-amber-500">
-                    </div>
-                    <input type="email" placeholder="Email Address" class="w-full p-4 bg-slate-50 rounded-2xl border-none outline-none focus:ring-2 focus:ring-amber-500">
-                    <textarea placeholder="Tell us about your project infrastructure needs..." class="w-full h-32 p-4 bg-slate-50 rounded-2xl border-none outline-none focus:ring-2 focus:ring-amber-500 resize-none"></textarea>
-                    <button class="w-full bg-slate-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-amber-600 transition shadow-xl">Submit Formal Inquiry</button>
+                    <input type="text" placeholder="Full Name" class="w-full p-4 bg-slate-50 rounded-xl border-none outline-none">
+                    <textarea placeholder="Message" class="w-full h-32 p-4 bg-slate-50 rounded-xl border-none outline-none"></textarea>
+                    <button class="w-full bg-amber-500 text-slate-900 py-4 rounded-xl font-black uppercase tracking-widest">Send Inquiry</button>
                 </form>
             </div>
         </div>
     </section>
-
-    <footer class="py-16 bg-white border-t border-slate-100 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-2xl font-black tracking-tighter text-slate-900 leading-none uppercase mb-6">Alps Group <span class="text-amber-600">Ltd</span></h2>
-            <p class="text-[10px] font-black uppercase tracking-[0.5em] text-slate-400">Engineering • Construction • Logistics • Est. 2005</p>
-            <p class="text-[8px] text-slate-300 font-bold uppercase tracking-widest mt-8 italic">thank you</p>
-        </div>
-    </footer>
 
 </body>
 </html>
